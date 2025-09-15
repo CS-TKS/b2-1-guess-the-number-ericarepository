@@ -29,18 +29,29 @@ public class NumberGuesser {
         while (!hasGuessedCorrectly) {
             // TODO: Prompt the user to enter their guess.
             // Example: System.out.print("Enter your guess: ");
+            System.out.println("What's your guess? ");
 
 
             // TODO: Read the integer guess from the user using the scanner.
             // Hint: userGuess = inputScanner.nextInt();
-
+            userGuess = inputScanner.nextInt();
 
             // TODO: Increment the guess counter.
-
+            guessCount += 1;
 
             // TODO: Use an if/else-if/else block to check the guess.
             // - If userGuess is greater than numberToGuess, print "Too high, try again."
+            if (userGuess > numberToGuess) {
+                System.out.println("Too high, try again.");
+            }
             // - If userGuess is less than numberToGuess, print "Too low, try again."
+            else if (userGuess < numberToGuess){
+                System.out.println("Too low, try again.");
+            }
+            else if (userGuess == numberToGuess){
+                System.out.println("Correct! You found the number in " + guessCount +  " tries!");
+                hasGuessedCorrectly = true;
+            }
             // - If they are equal, print the success message and set 'hasGuessedCorrectly' to true.
             //   The success message should be: "Correct! You found the number in [X] tries!"
             //   (Replace [X] with the value of guessCount).
